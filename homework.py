@@ -1,12 +1,11 @@
-import sys
-
-def matrix(self,rows,numbers):
+def matrix(rows, numbers):
     number=1
     for i in range(rows):
         for j in range(numbers):
             print(number,end=" ")
             number+=1
-            print()
+        print()
+
 
 def treugolnik():
     number=1
@@ -42,3 +41,63 @@ def my_rangerator(stop: float, start: float = 0.0, step: float =1.0):
         result += step
 
 
+def chain_sum(value: int = None):
+    total=value or 0
+
+    def vnutri(value: int = None):
+        nonlocal total
+        if value == 0 or value is None:
+            return total
+        else:total+=value
+        return vnutri
+    return vnutri
+
+def dictionnary_to_string(value, indent=0):
+        result=[]
+        if isinstance(value, int):
+            result.append(f"value={str(value)}")
+        elif isinstance(value, list):
+            result.append(f"array={str(value)}")
+        elif isinstance(value, dict):
+            for key,value in value.items():
+                row= f'\n{" " * indent}{key}: {dictionnary_to_string(value, indent + 2)}'
+                result.append(row)
+        return ''.join(result)
+
+
+def is_substring(string: str, sub_string: str):
+    string=string.lower()
+    sub_string=sub_string.lower()
+    result=(sub_string in string)
+    return result
+
+def to_snake_case(value: str):
+    new_string=value.replace(" ","_")
+    return new_string.lower()
+
+def is_valid_tupoe(value: str):
+    krugl_l=value.count('(')
+    krugl_r=value.count(')')
+    figur_l=value.count('{')
+    figur_r=value.count('}')
+    kvadrat_l=value.count('[')
+    kvadrat_r=value.count(']')
+    if krugl_l==krugl_r and figur_l==figur_r and kvadrat_l==kvadrat_r:
+        return True
+    else:
+        return False
+
+def is_valid_umnoe(value:str):
+    proverka=[]
+    mapping={')': '(', '}': '{', ']': '['}
+    for char in value:
+        if char in mapping.values():
+            proverka.append(char)
+        elif char in mapping:
+            if not proverka or proverka[-1] != mapping[char]:
+                return False
+            proverka.pop()
+    return not proverka
+
+
+matrix(1,5)
