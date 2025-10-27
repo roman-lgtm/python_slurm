@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Add utilit for check skobki in files">
-      <change afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
+    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="add generator.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761567774400</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add generator.py">
+      <option name="closed" value="true" />
+      <created>1761571121051</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761571121051</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +156,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add code for homework 1,2,3" />
     <MESSAGE value="Add utilit for check skobki in files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add utilit for check skobki in files" />
+    <MESSAGE value="add generator.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add generator.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_slurm$Guess_the_number_conputer.coverage" NAME="Guess the number conputer Coverage Results" MODIFIED="1751968944181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

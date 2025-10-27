@@ -22,6 +22,3 @@ def random_generator_out_file():
                 string_count -= 1
         except Exception as e:
             print(f"Произошла ошибка при обработке файла {file_path}: {e}")
-
-
-random_generator_out_file()
