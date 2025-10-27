@@ -1,3 +1,7 @@
+import os
+import sys
+
+
 def matrix(rows, numbers):
     number=1
     for i in range(rows):
@@ -98,6 +102,3 @@ def is_valid_umnoe(value:str):
                 return False
             proverka.pop()
     return not proverka
-
-
-matrix(1,5)
