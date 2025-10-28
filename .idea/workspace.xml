@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="add generator.py">
+    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor">
+      <change afterPath="$PROJECT_DIR$/tcp_chat_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcp_chat_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,8 @@
     "Python.homework.executor": "Run",
     "Python.main.executor": "Run",
     "Python.roman_test.executor": "Run",
+    "Python.tcp_chat_client.executor": "Run",
+    "Python.tcp_chat_server.executor": "Run",
     "Python.utilit_for_check_skobki.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -71,7 +74,30 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.tcp_chat_client">
+    <configuration name="tcp_chat_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_slurm" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="2" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tcp_chat_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in bin" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="python_slurm" />
       <option name="ENV_FILES" value="" />
@@ -91,6 +117,10 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.tcp_chat_client" />
+      <item itemvalue="Python tests.pytest in bin" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -155,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761577583609</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor">
+      <option name="closed" value="true" />
+      <created>1761632167878</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761632167878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,15 +203,18 @@
     <MESSAGE value="add code for homework 1,2,3" />
     <MESSAGE value="Add utilit for check skobki in files" />
     <MESSAGE value="add generator.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="add generator.py" />
+    <MESSAGE value="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_slurm$Guess_the_number_conputer.coverage" NAME="Guess the number conputer Coverage Results" MODIFIED="1751968944181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$homework.coverage" NAME="homework Coverage Results" MODIFIED="1761554653129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$generator.coverage" NAME="generator Coverage Results" MODIFIED="1761570492780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_slurm$tcp_chat_server.coverage" NAME="tcp_chat_server Coverage Results" MODIFIED="1761654531654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$roman_test.coverage" NAME="roman_test Coverage Results" MODIFIED="1761555245457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$Guess_the_number.coverage" NAME="Guess the number Coverage Results" MODIFIED="1751965155965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$utilit_for_check_skobki.coverage" NAME="utilit_for_check_skobki Coverage Results" MODIFIED="1761565756089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_slurm$tcp_chat_client.coverage" NAME="tcp_chat_client Coverage Results" MODIFIED="1761654541518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$main.coverage" NAME="main Coverage Results" MODIFIED="1751890920426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
