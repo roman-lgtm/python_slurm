@@ -1,34 +1,42 @@
 import socket
 import threading
 
-server = "127.0.0.1", 12312
-name = input(f'Введите ваше имя:')
+# Choosing Nickname
+nickname = input("Choose your nickname: ")
 
-socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-socket.connect(server)
+# Connecting To Server
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('127.0.0.1', 55555))
 
-socket.send(name.encode('UTF-8'))
 
-def read_socket():
-   try:
-       while True:
-           data = socket.recv(1024)
-           if not data:
-               break
-           print(data.decode('UTF-8'))
-   except Exception as e:
-       print(f'Произошла ошибка при приеме сообщения {e}')
-
-receiver_thread = threading.Thread(target=read_socket())
-receiver_thread.daemon = True  # Завершаем поток вместе с программой
-receiver_thread.start()
-
-try:
+# Listening to Server and Sending Nickname
+def receive():
     while True:
-        message = input()
-        socket.send(message.encode('UTF-8'))
-except KeyboardInterrupt:
-    print("\\nОшибка при попытке отправить")
-finally:
-    # Закрываем сокет
-    socket.close()
+        try:
+            # Receive Message From Server
+            # If 'NICK' Send Nickname
+            message = client.recv(1024).decode('ascii')
+            if message == 'NICK':
+                client.send(nickname.encode('ascii'))
+            else:
+                print(message)
+        except:
+            # Close Connection When Error
+            print("An error occured!")
+            client.close()
+            break
+
+
+# Sending Messages To Server
+def write():
+    while True:
+        message = '{}: {}'.format(nickname, input(''))
+        client.send(message.encode('ascii'))
+
+
+# Starting Threads For Listening And Writing
+receive_thread = threading.Thread(target=receive)
+receive_thread.start()
+
+write_thread = threading.Thread(target=write)
+write_thread.start()
