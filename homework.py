@@ -1,3 +1,7 @@
+import os
+import sys
+
+
 def matrix(rows, numbers):
     if not isinstance(rows, int) or rows <= 0:
         raise ValueError("Количество строк должно быть положительным целым числом")
@@ -102,6 +106,3 @@ def is_valid_umnoe(value:str):
                 return False
             proverka.pop()
     return not proverka
-
-
-matrix(1,5)
