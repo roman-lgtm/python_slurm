@@ -1,4 +1,8 @@
 def matrix(rows, numbers):
+    if not isinstance(rows, int) or rows <= 0:
+        raise ValueError("Количество строк должно быть положительным целым числом")
+    if not isinstance(numbers, int) or numbers <= 0:
+        raise ValueError("Количество чисел в строке должно быть положительным целым числом")
     number=1
     for i in range(rows):
         for j in range(numbers):
