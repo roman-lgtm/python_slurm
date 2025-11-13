@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Add PyQt widget">
-      <change afterPath="$PROJECT_DIR$/QAbstractTableModel.py" afterDir="false" />
+    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Add widget for work's with DB">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL_qt/initdb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL_qt/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QAbstractTableModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAbstractTableModel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,7 @@
     "Python.QAbstractTableModel.executor": "Run",
     "Python.generator.executor": "Run",
     "Python.homework.executor": "Run",
+    "Python.initdb.executor": "Debug",
     "Python.main.executor": "Run",
     "Python.roman_test.executor": "Run",
     "Python.tcp_chat_client.executor": "Run",
@@ -98,6 +103,8 @@
       <workItem from="1754378797086" duration="3561000" />
       <workItem from="1754382517764" duration="10505000" />
       <workItem from="1762976722226" duration="4833000" />
+      <workItem from="1763025934502" duration="55000" />
+      <workItem from="1763026484279" duration="5596000" />
     </task>
     <task id="LOCAL-00001" summary="add code for homework 1,2,3">
       <option name="closed" value="true" />
@@ -147,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761632167878</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add widget for work's with DB">
+      <option name="closed" value="true" />
+      <created>1763025976855</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763025976855</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +173,15 @@
     <MESSAGE value="Add utilit for check skobki in files" />
     <MESSAGE value="add generator.py" />
     <MESSAGE value="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor" />
+    <MESSAGE value="Add widget for work's with DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add widget for work's with DB" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="string" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_slurm$tcp_chat_client.coverage" NAME="tcp_chat_client Coverage Results" MODIFIED="1761654541518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -167,11 +190,12 @@
     <SUITE FILE_PATH="coverage/python_slurm$Hello_worldPyQt.coverage" NAME="Hello_worldPyQt Coverage Results" MODIFIED="1762848478375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$tcp_chat_server.coverage" NAME="tcp_chat_server Coverage Results" MODIFIED="1761654531654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$roman_test.coverage" NAME="roman_test Coverage Results" MODIFIED="1761555245457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_slurm$main.coverage" NAME="main Coverage Results" MODIFIED="1750169033509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_slurm$initdb.coverage" NAME="initdb Coverage Results" MODIFIED="1763030974724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
+    <SUITE FILE_PATH="coverage/python_slurm$main.coverage" NAME="main Coverage Results" MODIFIED="1763032451166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
     <SUITE FILE_PATH="coverage/python_slurm$homework.coverage" NAME="homework Coverage Results" MODIFIED="1761554653129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$utilit_for_check_skobki.coverage" NAME="utilit_for_check_skobki Coverage Results" MODIFIED="1761565756089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$QVBoxLayout.coverage" NAME="QVBoxLayout Coverage Results" MODIFIED="1762848735837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_slurm$QAbstractTableModel.coverage" NAME="QAbstractTableModel Coverage Results" MODIFIED="1762981575036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_slurm$QAbstractTableModel.coverage" NAME="QAbstractTableModel Coverage Results" MODIFIED="1763027002604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$generator.coverage" NAME="generator Coverage Results" MODIFIED="1761570492780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$Guess_the_number.coverage" NAME="Guess the number Coverage Results" MODIFIED="1751965155965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

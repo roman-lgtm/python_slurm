@@ -32,10 +32,10 @@ class TableModel(QAbstractTableModel):
 
     def setData(self, index, value, role):
         if role == Qt.ItemDataRole.EditRole:
-            # Меняем данные в нашем списке _data
-            self._data[index.row()][index.column()] = value
-            # Оповещаем интерфейс о том, что данные изменены
-            self.dataChanged.emit(index, index, [Qt.ItemDataRole.DisplayRole])
+            # Меняем данные в нашем списке _data, но сначала преобразуем из кортежа в лист
+            row = list(self._data[index.row()])
+            row[index.column()] = value
+            self._data[index.row()] = tuple(row)
             return True
         return False
 
