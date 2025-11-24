@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Add widget for work's with DB">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL_qt/initdb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL_qt/main.py" afterDir="false" />
+    <list default="true" id="23ef477a-e897-4c97-bb1f-ce1af855a20e" name="Changes" comment="Add script for create 2 table and push him. Add main.py for table Qtwidget.">
+      <change afterPath="$PROJECT_DIR$/exapmle_playgame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QAbstractTableModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAbstractTableModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_qt/initdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_qt/initdb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +38,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/roman-lgtm/python_slurm.git&quot;,
-    &quot;accountId&quot;: &quot;4da0f8ac-a451-4b4f-8b1f-1fad2bd8ca5e&quot;
+    &quot;url&quot;: &quot;git@github.com:roman-lgtm/python_slurm.git&quot;,
+    &quot;accountId&quot;: &quot;e48c9cb7-5b8f-4e71-9ab7-48af02084360&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -58,9 +56,11 @@
     "Python.Guess the number conputer.executor": "Run",
     "Python.Guess the number.executor": "Run",
     "Python.QAbstractTableModel.executor": "Run",
+    "Python.check.executor": "Run",
+    "Python.exapmle_playgame.executor": "Run",
     "Python.generator.executor": "Run",
     "Python.homework.executor": "Run",
-    "Python.initdb.executor": "Debug",
+    "Python.initdb.executor": "Run",
     "Python.main.executor": "Run",
     "Python.roman_test.executor": "Run",
     "Python.tcp_chat_client.executor": "Run",
@@ -70,7 +70,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Work/python_slurm",
+    "last_opened_file_path": "D:/Обучение_Ромка/Python_projects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,7 +104,10 @@
       <workItem from="1754382517764" duration="10505000" />
       <workItem from="1762976722226" duration="4833000" />
       <workItem from="1763025934502" duration="55000" />
-      <workItem from="1763026484279" duration="5596000" />
+      <workItem from="1763026484279" duration="7465000" />
+      <workItem from="1763562716126" duration="1121000" />
+      <workItem from="1763899367823" duration="2310000" />
+      <workItem from="1764008471462" duration="2016000" />
     </task>
     <task id="LOCAL-00001" summary="add code for homework 1,2,3">
       <option name="closed" value="true" />
@@ -162,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763025976855</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add script for create 2 table and push him. Add main.py for table Qtwidget.">
+      <option name="closed" value="true" />
+      <created>1763032735302</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763032735302</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +185,8 @@
     <MESSAGE value="add generator.py" />
     <MESSAGE value="Change code for update speed . &#10;Add asyncio/ProcessPooolExecutor" />
     <MESSAGE value="Add widget for work's with DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add widget for work's with DB" />
+    <MESSAGE value="Add script for create 2 table and push him. Add main.py for table Qtwidget." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add script for create 2 table and push him. Add main.py for table Qtwidget." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -190,12 +202,14 @@
     <SUITE FILE_PATH="coverage/python_slurm$Hello_worldPyQt.coverage" NAME="Hello_worldPyQt Coverage Results" MODIFIED="1762848478375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$tcp_chat_server.coverage" NAME="tcp_chat_server Coverage Results" MODIFIED="1761654531654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$roman_test.coverage" NAME="roman_test Coverage Results" MODIFIED="1761555245457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_slurm$initdb.coverage" NAME="initdb Coverage Results" MODIFIED="1763030974724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
-    <SUITE FILE_PATH="coverage/python_slurm$main.coverage" NAME="main Coverage Results" MODIFIED="1763032451166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
+    <SUITE FILE_PATH="coverage/python_slurm$initdb.coverage" NAME="initdb Coverage Results" MODIFIED="1764009071779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
+    <SUITE FILE_PATH="coverage/python_slurm$check.coverage" NAME="check Coverage Results" MODIFIED="1764009813729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
+    <SUITE FILE_PATH="coverage/python_slurm$main.coverage" NAME="main Coverage Results" MODIFIED="1763032642176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQL_qt" />
     <SUITE FILE_PATH="coverage/python_slurm$homework.coverage" NAME="homework Coverage Results" MODIFIED="1761554653129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$utilit_for_check_skobki.coverage" NAME="utilit_for_check_skobki Coverage Results" MODIFIED="1761565756089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$QVBoxLayout.coverage" NAME="QVBoxLayout Coverage Results" MODIFIED="1762848735837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$QAbstractTableModel.coverage" NAME="QAbstractTableModel Coverage Results" MODIFIED="1763027002604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_slurm$exapmle_playgame.coverage" NAME="exapmle_playgame Coverage Results" MODIFIED="1763902642527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$generator.coverage" NAME="generator Coverage Results" MODIFIED="1761570492780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_slurm$Guess_the_number.coverage" NAME="Guess the number Coverage Results" MODIFIED="1751965155965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

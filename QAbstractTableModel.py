@@ -8,6 +8,8 @@ rows = [("Newton", "1643-01-04", "Classical mechanics"),
         ("Darwin", "1809-02-12", "Evolution")]
 
 
+
+
 class TableModel(QAbstractTableModel):
     def __init__(self, data, headers, parent=None):
         super(TableModel, self).__init__(parent)
