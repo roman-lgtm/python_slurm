@@ -16,9 +16,14 @@ class TableModel(QAbstractTableModel):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
 
     def setData(self, index, value, role):
-        if role == Qt.EditRole:
-            setattr(self.values[index.row()],shema[index.column()], value)
-            return True
+        if role != Qt.EditRole:
+            return False
+        field_name = shema[index.column()]
+        obj = self.values[index.row()]
+        setattr(obj, field_name, value)
+
+
+
 
     def setCustomData(self, data: dict):
         self.headers = list(shema.values())
@@ -47,6 +52,8 @@ model = TableModel()
 model.setCustomData(projects)
 view = QTableView()
 view.setModel(model)
+
+
 
 view.resizeColumnsToContents()
 view.horizontalHeader().setStretchLastSection(True)
