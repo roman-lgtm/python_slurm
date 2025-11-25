@@ -1,38 +1,55 @@
-from os.path import exists
 from PyQt5.QtWidgets import *
-from PyQt5.QtSql import *
-import sys
+from PyQt5.QtCore import *
+from sqlalchemy.orm import Session
 
-if not exists("projects.db"):
-    print("File projects.db does not exist. Please run initdb.py.")
-    sys.exit()
+from initdb import engine,YaProject
+
+projects = []
+with engine.connect() as conn:
+    session=Session(bind=conn)
+    projects= list(session.query(YaProject).all())
+shema = {0:"col1",1:"col2",2:"col3",3:"col4",4:"col5"}
+
+class TableModel(QAbstractTableModel):
+    projects = []
+    with engine.connect() as conn:
+        session=Session(bind=conn)
+
+    def flags(self, index):
+        return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
+
+    def setData(self, index, value, role):
+        if role == Qt.EditRole:
+            setattr(self.values[index.row()][index.column()], value)
+            conn.execute(insert(users), values=[value])
+            session.flush()
+            session.commit()
+            return True
+
+    def setCustomData(self, data: dict):
+        self.headers = list(shema.values())
+        self.values = data
+
+    def rowCount(self, parent):
+        return len(max(self.values))
+
+    def columnCount(self, parent):
+        return len(self.headers)
+
+    def data(self, index, role):
+        if role != Qt.ItemDataRole.DisplayRole:
+            return QVariant()
+        return getattr(self.values[index.column()][index.row()])
+
+    def headerData(self, section, orientation, role):
+        if role != Qt.ItemDataRole.DisplayRole or orientation != Qt.Orientation.Horizontal:
+            return QVariant()
+        return self.headers[section]
 
 app = QApplication([])
-db = QSqlDatabase.addDatabase("QSQLITE")
-db.setDatabaseName("projects.db")
-db.open()
-
-model = QSqlTableModel(None, db)
-model.setTable("projects")
-model.select()
+model = TableModel()
+model.setCustomData(projects)
 view = QTableView()
 view.setModel(model)
-
-user_model = QSqlTableModel(None, db)
-user_model.setTable("users")
-user_model.select()
-users_view = QTableView()
-users_view.setModel(user_model)
-
-# Основная форма окна с двумя вкладками
-tab_widget = QTabWidget()
-tab_widget.addTab(view, "Проекты")
-tab_widget.addTab(users_view, "Пользователи")
-
-window = QWidget()
-layout = QVBoxLayout(window)
-layout.addWidget(tab_widget)
-window.setWindowTitle('Projects & Users')
-window.resize(800, 600)
-window.show()
+view.show()
 app.exec()
