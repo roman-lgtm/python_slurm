@@ -1,29 +1,23 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from sqlalchemy.orm import Session
-
+from sqlalchemy.orm import Session,declarative_base
+from sqlalchemy import create_engine, MetaData, Table, Integer, String, Column, Text, DateTime, Boolean, ForeignKey, \
+    insert, values
 from initdb import engine,YaProject
 
 projects = []
 with engine.connect() as conn:
-    session=Session(bind=conn)
-    projects= list(session.query(YaProject).all())
-shema = {0:"col1",1:"col2",2:"col3",3:"col4",4:"col5"}
+    session = Session(bind=conn)
+    projects = list(session.query(YaProject).all())
+shema = {0: "col1", 1: "col2", 2: "col3", 3: "col4", 4: "col5"}
 
 class TableModel(QAbstractTableModel):
-    projects = []
-    with engine.connect() as conn:
-        session=Session(bind=conn)
-
     def flags(self, index):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
 
     def setData(self, index, value, role):
         if role == Qt.EditRole:
-            setattr(self.values[index.row()][index.column()], value)
-            conn.execute(insert(users), values=[value])
-            session.flush()
-            session.commit()
+            setattr(self.values[index.row()],shema[index.column()], value)
             return True
 
     def setCustomData(self, data: dict):
@@ -31,7 +25,7 @@ class TableModel(QAbstractTableModel):
         self.values = data
 
     def rowCount(self, parent):
-        return len(max(self.values))
+        return len(self.values)
 
     def columnCount(self, parent):
         return len(self.headers)
@@ -39,17 +33,23 @@ class TableModel(QAbstractTableModel):
     def data(self, index, role):
         if role != Qt.ItemDataRole.DisplayRole:
             return QVariant()
-        return getattr(self.values[index.column()][index.row()])
+        return getattr(self.values[index.row()],shema[index.column()])
 
     def headerData(self, section, orientation, role):
-        if role != Qt.ItemDataRole.DisplayRole or orientation != Qt.Orientation.Horizontal:
+        if (role != Qt.ItemDataRole.DisplayRole or orientation != Qt.Orientation.Horizontal):
             return QVariant()
         return self.headers[section]
+
+
 
 app = QApplication([])
 model = TableModel()
 model.setCustomData(projects)
 view = QTableView()
 view.setModel(model)
+
+view.resizeColumnsToContents()
+view.horizontalHeader().setStretchLastSection(True)
+
 view.show()
 app.exec()

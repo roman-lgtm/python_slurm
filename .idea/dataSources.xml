@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:D:\Обучение_Ромка\Python_projects\python_slurm\SQL_qt\projects.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="postgres@localhost" uuid="fe2494c3-ca5e-4ed3-a5f0-e5dafc54eb58">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

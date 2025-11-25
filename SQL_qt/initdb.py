@@ -1,7 +1,5 @@
-import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-from sqlalchemy import create_engine, MetaData, Table, Integer, String, Column, Text, DateTime, Boolean, ForeignKey
-from datetime import datetime
+from sqlalchemy import create_engine, MetaData, Table, Integer, String, Column, Text, DateTime, Boolean, ForeignKey,insert
+from sqlalchemy.orm import Session,declarative_base
 import random
 
 metadata = MetaData()
@@ -9,20 +7,14 @@ metadata = MetaData()
 #Создаем енджин для создания таблиц и наполнения БД
 engine = create_engine("postgresql+psycopg2://postgres:12345@localhost/postgres")
 engine.connect()
-
-users_table = Table('users', metadata,
-Column('name', Text(), primary_key=True),
-    Column('soname', Text(), nullable=False),
-    Column('income', Integer,  nullable=False)
-)
-
-
 Base = declarative_base()
+meta = MetaData()
+
 
 
 
 class YaProject(Base):
-    __tablename__ = 'ya_project'
+    __tablename__ = 'YA_project'
     id = Column(Integer, primary_key=True)
     col1 = Column(Integer, nullable=False)
     col2 = Column(Integer, nullable=False)
@@ -30,51 +22,38 @@ class YaProject(Base):
     col4 = Column(Integer, nullable=False)
     col5 = Column(Integer, nullable=False)
 
-    def fill_ya_projects(engine):
-        session = Session(bind=engine)
+def fill_ya_projects(engine):
+    session = Session(bind=engine)
 
-        for i in range(100):
-            values = random.sample(range(0, 99999), 5)
-            session.add_all(
-                [
-                    YaProject(
-                        col1=values[0],
-                        col2=values[1],
-                        col3=values[2],
-                        col4=values[3],
-                        col5=values[4],
-                    )
-                    for i in range(5)
-                ]
-            )
-            session.flush()
-        session.commit()
-    def init_db():
-        with engine.connect() as conn:
-            meta.drop_all(engine)
-            meta.create_all(engine)
+    for i in range(100):
+        values = random.sample(range(0, 99999), 5)
+        session.add_all(
+            [
+                YaProject(
+                    col1=values[0],
+                    col2=values[1],
+                    col3=values[2],
+                    col4=values[3],
+                    col5=values[4],
+                )
+                for i in range(5)
+            ]
+        )
+        session.flush()
+    session.commit()
 
-            conn.execute(insert(users_table),
-                {"name":"Vladimir",
-                "soname":"Barabaev",
-                "income":1200},
-                             {
-                                 "name":"Roman",
-                "soname":"Tarabaev",
-                "income":200
-                             },
-                             {
-                                 "name": "Sergey",
-                                 "soname": "Pizdabolov",
-                                 "income": 1200000
-                             }
-                             )
-            fill_ya_projects(engine)
+def init_db():
+    with engine.connect() as conn:
+        meta.drop_all(engine)
+        meta.create_all(engine)
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+    fill_ya_projects(engine)
 
 
 
-    if __name__ == '__main__':
-        init_db()
+if __name__ == '__main__':
+    init_db()
 
 
 
@@ -84,7 +63,7 @@ class YaProject(Base):
 
 
 
-metadata.create_all(engine)
+# metadata.create_all(engine)
 #СТАРЫЙ ВАРИАНТ ЧЕРЕЗ SQL_LIGHT
 # users_data  = [{'name':random_int(), 'soname':random_int(), 'age':random_int(), 'gender':random_int(),'wt':random_int()} for _ in range(100)]
 #
