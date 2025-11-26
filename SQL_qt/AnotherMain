@@ -1,0 +1,97 @@
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, update
+
+# Глобальная сессия не нужна — будем создавать её при каждом изменении
+projects = []
+with engine.connect() as conn:
+    session = Session(bind=conn)
+    projects = list(session.query(YaProject).all())
+    session.close()  # Обязательно закрываем
+
+shema = {0: "col1", 1: "col2", 2: "col3", 3: "col4", 4: "col5"}
+
+
+class TableModel(QAbstractTableModel):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.headers = []
+        self.values = []
+
+    def flags(self, index):
+        return Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsEditable
+
+    def setData(self, index, value, role=Qt.EditRole):
+        if not index.isValid() or role != Qt.EditRole:
+            return False
+
+        try:
+            field_name = shema[index.column()]
+            obj = self.values[index.row()]
+
+            # Обновляем объект в памяти
+            setattr(obj, field_name, value)
+
+            # Сохраняем изменения в БД
+            with Session(bind=engine) as session:
+                # Создаём запрос на обновление
+                stmt = update(YaProject) \
+                    .where(YaProject.id == obj.id) \
+                    .values({field_name: value})
+
+                session.execute(stmt)
+                session.commit()
+
+            # Извещаем представление об изменении данных
+            self.dataChanged.emit(index, index, [Qt.EditRole])
+            return True
+
+        except Exception as e:
+            print(f"Ошибка при сохранении: {e}")
+            return False
+
+    def setCustomData(self, data: list):
+        self.headers = list(shema.values())
+        self.values = data
+        self.layoutChanged.emit()  # Извещаем представление о смене структуры
+
+    def rowCount(self, parent=QModelIndex()):
+        return len(self.values)
+
+    def columnCount(self, parent=QModelIndex()):
+        return len(self.headers)
+
+    def data(self, index, role=Qt.ItemDataRole.DisplayRole):
+        if not index.isValid():
+            return QVariant()
+
+        if role == Qt.ItemDataRole.DisplayRole:
+            try:
+                obj = self.values[index.row()]
+                field_name = shema[index.column()]
+                return getattr(obj, field_name)
+            except (IndexError, AttributeError):
+                return QVariant()
+
+        return QVariant()
+
+    def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
+        if (role == Qt.ItemDataRole.DisplayRole and
+                orientation == Qt.Orientation.Horizontal):
+            if section < len(self.headers):
+                return self.headers[section]
+        return QVariant()
+
+
+app = QApplication([])
+model = TableModel()
+model.setCustomData(projects)
+view = QTableView()
+view.setModel(model)
+
+view.resizeColumnsToContents()
+view.horizontalHeader().setStretchLastSection(True)
+
+view.show()
+app.exec()
